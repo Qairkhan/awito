@@ -10,7 +10,8 @@ addAd.addEventListener('click', () => {
 
 modalAdd.addEventListener('click', (event)=> {
     const target = event.target;
-    if (target.classList.contains('modal__close')) {
+    if (target.classList.contains('modal__close') || 
+    target === modalAdd ) {
         modalAdd.classList.add('hide');
     }
 });
