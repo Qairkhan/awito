@@ -9,7 +9,7 @@ const modalAdd = document.querySelector(".modal__add"),
 
 const closeModal = function (event) {
   const target = event.target;
-  if (target.closest("modal__close") || target === this) {
+  if (target.closest(".modal__close") || target === this) {
     this.classList.add("hide");
     modalSubmit.reset();
   }
@@ -27,5 +27,5 @@ catalog.addEventListener("click", (event) => {
   const target = event.target;
   if (target.closest(".card")) {
     modalItem.classList.remove("hide");
-  }
+  };
 });
