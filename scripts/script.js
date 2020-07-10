@@ -11,7 +11,9 @@ const closeModal = function (event) {
   const target = event.target;
   if (target.closest(".modal__close") || target === this) {
     this.classList.add("hide");
-    modalSubmit.reset();
+    if (this === modalAdd) {
+      modalSubmit.reset();
+    }
   }
 };
 
@@ -27,5 +29,5 @@ catalog.addEventListener("click", (event) => {
   const target = event.target;
   if (target.closest(".card")) {
     modalItem.classList.remove("hide");
-  };
+  }
 });
