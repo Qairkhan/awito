@@ -10,15 +10,13 @@ const modalAdd = document.querySelector('.modal__add'),
 
 const closeModal = (event)=> {
     const target = event.target;
-    if (target.classList.contains('modal__close') || 
-        target === modalAdd ) {
+    if (target.closest('modal__close') || 
+        target === modalAdd ||
+        target === modalItem) {
         modalAdd.classList.add('hide');
-        modalSubmit.reset();
-    } else if (target.closest('.modal__close') || 
-    target === modalItem) {
         modalItem.classList.add('hide');
-    }
-
+        modalSubmit.reset();
+    } 
 };
 
 addAd.addEventListener('click', () => {
