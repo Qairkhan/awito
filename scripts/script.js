@@ -7,6 +7,10 @@ const modalAdd = document.querySelector(".modal__add"),
   catalog = document.querySelector(".catalog"),
   modalItem = document.querySelector(".modal__item");
 
+const elememModalSubmit = [...modalSubmit.elements].filter(
+  (elem) => elem.tagName !== "BUTTON" || elem.type !== "submit"
+);
+
 const closeModal = function (event) {
   const target = event.target;
   if (target.closest(".modal__close") || target === this) {
