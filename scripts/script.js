@@ -17,9 +17,17 @@ const closeModal = function (event) {
   }
 };
 
+const closeModalEsc = (event) => {
+  if (event.code === "Escape") {
+    modalAdd.classList.add("hide");
+    modalItem.classList.add("hide");
+  }
+};
+
 addAd.addEventListener("click", () => {
   modalAdd.classList.remove("hide");
   modalBtnSubmit.disabled = true;
+  document.addEventListener("keyup", closeModalEsc);
 });
 
 modalAdd.addEventListener("click", closeModal);
@@ -29,5 +37,6 @@ catalog.addEventListener("click", (event) => {
   const target = event.target;
   if (target.closest(".card")) {
     modalItem.classList.remove("hide");
+    document.addEventListener("keyup", closeModalEsc);
   }
 });
