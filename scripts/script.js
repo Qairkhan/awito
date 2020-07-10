@@ -21,6 +21,7 @@ const closeModalEsc = (event) => {
   if (event.code === "Escape") {
     modalAdd.classList.add("hide");
     modalItem.classList.add("hide");
+    document.removeEventListener("keyup", closeModalEsc);
   }
 };
 
