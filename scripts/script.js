@@ -8,12 +8,7 @@ const modalAdd = document.querySelector('.modal__add'),
     catalog = document.querySelector('.catalog'),
     modalItem = document.querySelector('.modal__item');
 
-addAd.addEventListener('click', () => {
-    modalAdd.classList.remove('hide'),
-    modalBtnSubmit.disabled = true;
-});
-
-modalAdd.addEventListener('click', (event)=> {
+const closeModal = (event)=> {
     const target = event.target;
     if (target.classList.contains('modal__close') || 
         target === modalAdd ) {
@@ -21,7 +16,14 @@ modalAdd.addEventListener('click', (event)=> {
         modalSubmit.reset();
     }
 
+}
+
+addAd.addEventListener('click', () => {
+    modalAdd.classList.remove('hide'),
+    modalBtnSubmit.disabled = true;
 });
+
+modalAdd.addEventListener('click', closeModal);
 
 catalog.addEventListener('click', event => {
     const target = event.target;
