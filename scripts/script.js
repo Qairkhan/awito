@@ -25,7 +25,7 @@ modalAdd.addEventListener('click', (event)=> {
 
 catalog.addEventListener('click', event => {
     const target = event.target;
-    if (target.clasest('.card')) {
+    if (target.closest('.card')) {
         modalItem.classList.remove('hide');
     }
 });
