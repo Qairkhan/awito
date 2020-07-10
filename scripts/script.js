@@ -14,9 +14,12 @@ const closeModal = (event)=> {
         target === modalAdd ) {
         modalAdd.classList.add('hide');
         modalSubmit.reset();
+    } else if (target.closest('.modal__close') || 
+    target === modalItem) {
+        modalItem.classList.add('hide');
     }
 
-}
+};
 
 addAd.addEventListener('click', () => {
     modalAdd.classList.remove('hide'),
